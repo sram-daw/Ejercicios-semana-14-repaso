@@ -26,7 +26,7 @@ public class Main {
                     if (proyectil) {
                         System.out.println("Has bloqueado " + ((Botas) e).accion_especial(true, 2) + " puntos de daño.");
                     } else {
-                        System.out.println("No ha caído ningún proyectil.");
+                        System.out.println("No te han hecho ningún ataque a melee.");
                     }
                 } else {
                     proyectil = rd.nextBoolean();
