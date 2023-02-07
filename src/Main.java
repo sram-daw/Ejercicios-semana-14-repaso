@@ -15,31 +15,28 @@ public class Main {
         arrayEquipo[3] = nuevoCasco;
         arrayEquipo[4] = nuevasBotas;
         Random rd = new Random(); // se crea un objeto random para el booleano
-        boolean proyectil = false;
+        boolean isProyectil = false;
 
         for (Equipo e : arrayEquipo) {
             if (e instanceof Arma) {
                 System.out.println("Has hecho " + ((Arma) e).doing_damage(1.8) + " puntos de daño con " + e.getNombre());
             } else {
                 if (e instanceof Botas) {
-                    proyectil = rd.nextBoolean(); //el booleano es true o false de forma aleatoria, haciendo uso del objeto random
-                    if (proyectil) {
+                    isProyectil = rd.nextBoolean(); //el booleano es true o false de forma aleatoria, haciendo uso del objeto random
+                    if (isProyectil) {
                         System.out.println("Has bloqueado " + ((Botas) e).accion_especial(true, 2) + " puntos de daño.");
                     } else {
                         System.out.println("No te han hecho ningún ataque a melee.");
                     }
                 } else {
-                    proyectil = rd.nextBoolean();
-                    if (proyectil) {
+                    isProyectil = rd.nextBoolean();
+                    if (isProyectil) {
                         System.out.println("Has bloqueado " + e.accion_especial(true) + " puntos de daño.");
                     } else {
                         System.out.println("No ha caído ningún proyectil.");
                     }
-
                 }
             }
         }
-
     }
-
 }
